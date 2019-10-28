@@ -1,0 +1,5 @@
+The Chunky mod is very small at the moment, but it still adds some pretty neat stuff.
+Like, for instance, an armor set that essentailly erases time.
+
+If you plan to play with this mod, I suggest using it in a modpack since it's so small right now.
+Also, it has big problems in multiplayer that I don't know how to fix.
