@@ -6,7 +6,7 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace Chunky.Items.Useable
+namespace Chunky.Items.Useables
 {
     public class ThirdBomb : ModItem
     {
