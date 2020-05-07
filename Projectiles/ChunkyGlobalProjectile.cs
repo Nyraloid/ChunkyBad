@@ -19,6 +19,10 @@ namespace Laugicality.Projectiles
         public float yP = 0;
         public bool stopped = false;
 
+        //Mandom
+        private Vector2[] SaxPos = new Vector2[361];
+        private Vector2[] SaxVel = new Vector2[361];
+
         public override void SetDefaults(Projectile projectile)
         {
             ai = projectile.aiStyle;
@@ -31,6 +35,25 @@ namespace Laugicality.Projectiles
             Player player = Main.player[projectile.owner];
             ChunkyPlayer modPlayer = player.GetModPlayer<ChunkyPlayer>();
             Player projOwner = Main.player[projectile.owner];
+
+            //Mandom
+            if (ChunkyWorld.TOKIWOTOMARE == 0)
+            {
+                for (int i = 0; i < 360; i++)
+                {
+                    SaxPos[i] = SaxPos[i + 1];
+                    SaxVel[i] = SaxVel[i + 1];
+                }
+                SaxPos[360] = projectile.position;
+                SaxVel[360] = projectile.velocity;
+
+                if (ChunkyPlayer.TimeReversed)
+                {
+                    projectile.position = SaxPos[0];
+                    projectile.velocity = SaxVel[0];
+                    projectile.timeLeft += 360;
+                }
+            }
 
             //King Crimson
             if (ChunkyWorld.TimeSkipping > 0)
