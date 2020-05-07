@@ -1,5 +1,11 @@
-The Chunky mod is very small at the moment, but it still adds some pretty neat stuff.
-Like, for instance, an armor set that essentailly erases time.
+Chunky currently adds JoJo inspired items and abilities, as well as some miscellanious items.
 
-If you plan to play with this mod, I suggest using it in a modpack since it's so small right now.
-Also, it has big problems in multiplayer that I don't know how to fix.
+So far, from JoJo, I've included DIO and Kakyoin from part 3, King Crimson from part 5, and Mandom from part 7.
+
+If you plan to play with this mod, I recommend including it in a modpack due to its relatively small size.
+
+Don't try using time manipulation in multiplayer. It does not work.
+
+
+
+Chunky does not have a homepage at the moment, but if you need to contact me I am "CHUNKY NORRIS" on the Terraria Forums.

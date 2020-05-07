@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
+using Chunky;
 
 namespace Chunky
 {
@@ -25,7 +26,7 @@ namespace Chunky
             if (TOKIWOTOMARE > 0) TOKIWOTOMARE--; //Toki wo ugoki desu
             if (TimeSkipping > 0) TimeSkipping--; //this is just to stop the time skip
 
-            //Every other second this will be true, though I'm not sure when that'll be useful
+            //Every other frame this will be true, though I'm not sure when that'll be useful
             EveryOther = !EveryOther;
         }
     }
