@@ -15,8 +15,6 @@ namespace Chunky.ZAWARUDO
     //Without Enigma, I don't know what I would've done. I don't think I could've even started modding what I wanted
     public class TsShader : ScreenShaderData
     {
-        private int YIndex;
-
         public TsShader(string passName)
             : base(passName)
         {}

@@ -12,7 +12,7 @@ namespace Chunky.ZAWARUDO
             Description.SetDefault("TOKI WO TOMARE");
             Main.debuff[Type] = false;
             Main.pvpBuff[Type] = false;
-            Main.buffNoSave[Type] = true;
+            Main.buffNoSave[Type] = false;
             longerExpertDebuff = false;
             canBeCleared = false;
         }
