@@ -14,8 +14,6 @@ namespace Chunky.KingCrimson
 {
     public class KcShader : ScreenShaderData
     {
-        private int YIndex;
-
         public KcShader(string passName)
             : base(passName)
         { }
