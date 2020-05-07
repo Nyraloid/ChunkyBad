@@ -16,31 +16,11 @@ namespace Chunky.NPCs
         public float xP = 0;
         public float yP = 0;
 
-        public override void SetDefaults(NPC npc)
-        {
-            
+        //Mandom
+        private Vector2[] SaxPos = new Vector2[361];
+        private Vector2[] SaxVel = new Vector2[361];
+        private int[] SaxHP = new int[361];
 
-        }
-
-        public override void ResetEffects(NPC npc)
-        {
-
-        }
-
-        public override void ScaleExpertStats(NPC npc, int numPlayers, float bossLifeScale)
-        {
-            
-        }
-
-        public override void EditSpawnRate(Player player, ref int spawnRate, ref int maxSpawns)
-        {
-            if (ChunkyWorld.TOKIWOTOMARE > 1) spawnRate = 0;
-        }
-
-        public override void UpdateLifeRegen(NPC npc, ref int damage)
-        {
-            if (ChunkyWorld.TOKIWOTOMARE > 0) npc.lifeRegen = 0;
-        }
 
         public override bool PreAI(NPC npc)
         {
@@ -51,6 +31,9 @@ namespace Chunky.NPCs
 
         public override void PostAI(NPC npc)
         {
+            Player player = Main.player[npc.target]; //Fix this
+            ChunkyPlayer modPlayer = player.GetModPlayer<ChunkyPlayer>();
+
             //Za Warudo
             if (ChunkyWorld.TOKIWOTOMARE > 0)
             {
@@ -107,6 +90,27 @@ namespace Chunky.NPCs
                 {
                     npc.velocity.X = xV;
                     npc.velocity.Y = yV;
+                }
+            }
+
+            //Mandom
+            if (ChunkyWorld.TOKIWOTOMARE == 0)
+            {
+                for (int i = 0; i < 360; i++)
+                {
+                    SaxPos[i] = SaxPos[i + 1];
+                    SaxVel[i] = SaxVel[i + 1];
+                    SaxHP[i] = SaxHP[i + 1];
+                }
+                SaxPos[360] = npc.position;
+                SaxVel[360] = npc.velocity;
+                SaxHP[360] = npc.life;
+
+                if (ChunkyPlayer.TimeReversed)
+                {
+                    npc.position = SaxPos[0];
+                    npc.velocity = SaxVel[0];
+                    npc.life = SaxHP[0];
                 }
             }
         }
